@@ -349,7 +349,8 @@ class URLBar: UIView {
         toolset.stopReloadButton.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.trailing.equalTo(urlBarBorderView).priority(.required)
-            make.width.equalTo(UIConstants.layout.urlBarButtonTargetSize).priority(900)
+            make.width.height.equalTo(UIConstants.layout.urlBarButtonTargetSize).priority(900)
+//            make.width.height.equalTo(50)
         }
 
         urlText.snp.makeConstraints { make in
@@ -756,6 +757,7 @@ class URLBar: UIView {
         toolset.forwardButton.animateHidden(isHidden, duration: UIConstants.layout.urlBarTransitionAnimationDuration)
         toolset.deleteButton.animateHidden(isHidden, duration: UIConstants.layout.urlBarTransitionAnimationDuration)
         toolset.contextMenuButton.animateHidden(!inBrowsingMode ? false : (isIPadRegularDimensions ? false : isHidden), duration: UIConstants.layout.urlBarTransitionAnimationDuration)
+//        toolset.stopReloadButton.animateHidden(isHidden, duration: UIConstants.layout.urlBarTransitionAnimationDuration)
 
     }
 
